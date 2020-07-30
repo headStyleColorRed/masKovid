@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb:latest
+    volumes:
+      - ./database:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Lidia1!
+    restart: always
+
+  wordpress:
+    image: wordpress:latest
+    volumes:
+      - ./wordpress:/var/www/html
+    ports:
+      - "80:80" 
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_PASSWORD: Lidia1!
+    restart: on-failure
+
+
