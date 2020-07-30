@@ -8,7 +8,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: Lidia1!
+      MYSQL_ROOT_PASSWORD: password
     restart: always
 
   wordpress:
@@ -19,7 +19,7 @@ services:
       - "80:80" 
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_PASSWORD: Lidia1!
+      WORDPRESS_DB_PASSWORD: password
     restart: on-failure
 
 
